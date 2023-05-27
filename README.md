@@ -1,4 +1,4 @@
-React PoC - Documentation
+### `React PoC - Documentation`
 
 For this application, an API from GitHub was used to fetch the data: `"https://api.github.com/search/repositories"`
 
