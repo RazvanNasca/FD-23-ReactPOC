@@ -1,0 +1,41 @@
+.repo-card {
+    display: block;
+    border: 1px solid var(--color-border);
+    transition: var(--animation-fade);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+.repo-card:hover {
+    box-shadow: var(--drop-shadow);
+    background: linear-gradient(
+        90deg,
+        var(--color-accent) 0,
+        var(--color-accent) 4px,
+        transparent 5px
+    );
+    transform: scale(1.025);
+}
+
+.title {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: var(--font-family-display);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}

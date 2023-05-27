@@ -1,0 +1,60 @@
+:root {
+    --color-primary: #0b1b44;
+    --color-background: #fff;
+    --color-border: #bbb;
+    --color-text: #202022;
+    --color-accent: #0098ff;
+    --color-accent-hover: #0b1b44;
+  
+    --font-family-base: system-ui, sans-serif;
+    --font-family-display: "Ubuntu", sans-serif;
+  
+    --drop-shadow: 0 2px 8px 1px rgba(18, 18, 18, 0.3);
+    --animation-fade: all 0.1s ease-out;
+  }
+  
+  body {
+    font-family: var(--font-family-base);
+    color: var(--color-text);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 1.67rem;
+  }
+  
+  h1 {
+    font-family: var(--font-family-display);
+  }
+  
+  header {
+    background: var(--color-primary);
+    color: var(--color-background);
+    position: relative;
+  }
+  
+  main {
+    padding: 2rem 1rem;
+  }
+  
+  /* Repo card component styles */
+  
+  .repo-cards {
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+  
+  .repo-cards:empty::before {
+    display: block;
+    content: "Loading...";
+    width: 100%;
+    text-align: center;
+  }
+  
+  
