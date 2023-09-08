@@ -12,7 +12,6 @@ const Home = () => {
     const apiKey = process.env.REACT_APP_GIT_KEY_AUTH;
 
     useEffect(() => {
-        console.log("AAAAAA ", process.env);
         axios.get( /// axios is a library used to communicate with BE
         "https://api.github.com/search/repositories?q=stars:>10000", 
         {
