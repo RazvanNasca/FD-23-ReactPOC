@@ -7,13 +7,14 @@ const RepoPage = () => {
 
     const { owner, name } = useParams(); /// returns an object of key/value of the dynamic params from the current URL
     const [isLoading, setIsLoading] = useState(false);
+    const apiKey = process.env.REACT_APP_GIT_KEY_AUTH;
 
     useEffect(() => {
         axios.get( 
         "https://api.github.com/repos/" + owner + "/" + name, 
         {
             headers: {
-                Authorization: "Bearer "
+                Authorization: `Bearer ${apiKey}`
             }
         }
         )
@@ -27,7 +28,7 @@ const RepoPage = () => {
         .finally(() => {
             setIsLoading(false);
         })
-    }, [name, owner]);
+    }, [name, owner, apiKey]);
 
     return (
         <>

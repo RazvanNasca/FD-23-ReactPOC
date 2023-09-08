@@ -9,13 +9,15 @@ import "./Home.css";
 const Home = () => {
     const [repos, setRepos] = useState([]); /// allow to add state to functional components
     const [isLoading, setIsLoading] = useState(false); /// some default values
+    const apiKey = process.env.REACT_APP_GIT_KEY_AUTH;
 
     useEffect(() => {
+        console.log("AAAAAA ", process.env);
         axios.get( /// axios is a library used to communicate with BE
         "https://api.github.com/search/repositories?q=stars:>10000", 
         {
             headers: {
-            Authorization: "Bearer "
+                Authorization: `Bearer ${apiKey}`
             }
         }
         )
@@ -41,7 +43,7 @@ const Home = () => {
         .finally(() => {
             setIsLoading(false);
         })
-    }, []);
+    }, [apiKey]);
 
     const onClick = (value) => {
         setIsLoading(true);
@@ -49,7 +51,7 @@ const Home = () => {
         "https://api.github.com/search/repositories?q=" + value, 
         {
             headers: {
-            Authorization: "Bearer "
+                Authorization: `Bearer ${apiKey}`
             }
         }
         )
